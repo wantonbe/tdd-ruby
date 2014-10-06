@@ -2,6 +2,7 @@
 class ClosedRange
   # 下端点と上端点を与えて閉区間を生成する
   def initialize(x, y)
+    # 例外処理
     if x > y then
       raise RuntimeError, "下端点と上端点の順序が間違っている"
     end
