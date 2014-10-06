@@ -19,6 +19,22 @@ describe "Closed_Range" do
     it "閉区間から上端点を取得する" do
       expect(@c3to8.getUpperEndpoint()).to eq 8
     end
+    
+    it "閉区間から文字列表記('[3,8]')を取得する" do
+      expect(@c3to8.toString()).to eq "[3,8]"
+    end
+  
+    it "5は区間に含まれる" do
+      expect(@c3to8.contains?(5)).to be_truthy
+    end
+  
+    it "-1は区間に含まれない" do
+      expect(@c3to8.contains?(-1)).to be_falsey
+    end
+
+    it "文字列は区間に含まれない" do
+      expect(@c3to8.contains?("3")).to be_falsey
+    end
   end
 
   describe "エラーテスト" do

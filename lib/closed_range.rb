@@ -20,4 +20,14 @@ class ClosedRange
   def getUpperEndpoint
     return @upperEndpoint
   end
+  
+  # 閉区間から文字列表記('[lower,upper]')を取得する
+  def toString
+    return "[" + @lowerEndpoint.to_s + "," + @upperEndpoint.to_s + "]"
+  end
+
+  # 指定された値が区間に含まれているかを判定する
+  def contains?(number)
+    return (@lowerEndpoint..@upperEndpoint).include?(number)
+  end
 end
